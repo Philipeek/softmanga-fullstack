@@ -1,0 +1,9 @@
+{
+  "name": "softmanga-demo-site",
+  "version": "1.0.0",
+  "description": "Demo backend for SoftManga",
+  "main": "app.js",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
