@@ -1,6 +1,17 @@
+// backend/middlewares/requestLogger.js
+
 function requestLogger(req, res, next) {
-    const time = new Date().toISOString();
-    console.log(`[${time}] ${req.method} ${req.originalUrl}`);
+    const start = Date.now();
+
+    res.on("finish", () => {
+        const duration = Date.now() - start;
+
+        console.log(
+            `[${new Date().toISOString()}] ${req.method} ${req.originalUrl} ` +
+            `${res.statusCode} - ${duration}ms`
+        );
+    });
+
     next();
 }
 
