@@ -34,25 +34,35 @@ This repository represents a clean, safe-to-publish version of a larger personal
 ## 🏗 Project Structure
 
 ```txt
-softmanga-demo-site/
-│
-├── backend/
-│   ├── app.js                # Express server (demo version)
-│   ├── routes/
-│   │    ├── index.js         # Example router
-│   │    └── api.js           # Example REST endpoints
-│   ├── controllers/          # Placeholder for controller logic
-│   ├── middlewares/          # Placeholder for middleware examples
-│   └── package.json
-│
-├── frontend/
-│   ├── index.html            # Main page (demo layout)
-│   ├── style.css             # Basic styling
-│   └── assets/
-│        └── placeholder.jpg  # Example asset file
-│
-└── database/
-    └── schema.sql            # PostgreSQL table structure example
+backend/
+├─ app.js
+├─ package.json
+├─ config/db.js
+├─ controllers/
+│  ├─ demoController.js
+│  ├─ healthController.js
+│  └─ mangaController.js
+├─ middlewares/
+│  ├─ errorHandler.js
+│  └─ requestLogger.js
+├─ models/
+│  └─ mangaModel.js
+├─ routes/
+│  ├─ index.js
+│  └─ api.js
+├─ services/
+│  └─ healthService.js
+
+database/
+└─ schema.sql
+
+frontend/
+├─ index.html
+└─ style.css
+
+docker-compose.yml
+README.md
+
 ```
 
 ---
