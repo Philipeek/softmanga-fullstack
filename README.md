@@ -6,6 +6,19 @@ It demonstrates backend architecture, routing structure, database modeling, and 
 
 ---
 
+SoftManga is a full-stack web application designed to demonstrate real-world backend architecture, database modeling, and frontend integration.
+
+This repository represents a clean, safe-to-publish version of a larger personal project, focusing on structure, scalability, and development practices rather than business-specific logic.
+
+## My Role & Responsibilities
+
+- Designed backend architecture and routing structure
+- Implemented REST API endpoints using Express
+- Designed PostgreSQL schema and relations
+- Built basic frontend layout for data presentation
+- Organized project structure for scalability
+- Prepared demo-safe version for portfolio purposes
+
 ## 🚀 Features (Demo Version)
 
 - Node.js + Express backend structure  
