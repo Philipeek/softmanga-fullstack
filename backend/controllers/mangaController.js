@@ -2,7 +2,7 @@ const mangaService = require("../services/mangaService");
 
 async function listMangas(req, res, next) {
     try {
-        const mangas = await mangaModel.getAllMangas();
+        const mangas = await mangaService.getAllMangas();
         res.json({ data: mangas });
     } catch (error) {
         next(error);
