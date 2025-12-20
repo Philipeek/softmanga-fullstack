@@ -31,18 +31,6 @@ This repository represents a clean, safe-to-publish version of a larger personal
 
 ---
 
-🗄 Database (Demo)
-The project includes a demo PostgreSQL setup using connection pooling.
-
-- PostgreSQL connection via pg Pool
-- Example schema (mangas table)
-- Model-based database access
-- Safe demo credentials (no secrets)
-
-Example endpoint:
-GET /api/mangas
-Returns a list of demo manga records from the database.
-
 ## 🏗 Project Structure
 
 ```txt
@@ -117,4 +105,31 @@ The goal is to show code structure and your development skills without exposing 
 ## 📬 Contact
 
 For questions or collaborations — feel free to reach out via GitHub or LinkedIn.
+
+🗄 Database (Demo)
+The project includes a demo PostgreSQL setup using connection pooling.
+
+- PostgreSQL connection via pg Pool
+- Example schema (mangas table)
+- Model-based database access
+- Safe demo credentials (no secrets)
+
+Example endpoint:
+GET /api/mangas
+Returns a list of demo manga records from the database.
+
+🐳 Docker (Demo Setup)
+
+The project can be started using Docker and Docker Compose.
+
+Start backend and PostgreSQL:
+docker-compose up --build
+
+API available at:
+http://localhost:3000/api/health
+http://localhost:3000/api/mangas
+
+This setup is for demonstration purposes only.
+
+
 
