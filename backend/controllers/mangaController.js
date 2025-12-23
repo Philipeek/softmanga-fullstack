@@ -14,9 +14,12 @@ async function getManga(req, res, next) {
         const { id } = req.params;
         const manga = await mangaService.getMangaById(id);
 
-        if (!manga) {
-            return res.status(404).json({ error: "Manga not found" });
-        }
+        const ApiError = require("../utils/ApiError");
+
+    if (!manga) {
+        return next(ApiError.notFound("Manga not found"));
+    }
+
 
         res.json({ data: manga });
     } catch (error) {
