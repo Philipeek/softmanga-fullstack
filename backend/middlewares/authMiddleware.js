@@ -5,7 +5,7 @@ function requireAuth(req, res, next) {
     const authHeader = req.headers.authorization;
 
     if (!authHeader || !authHeader.startsWith("Bearer ")) {
-        return next(ApiError.badRequest("Authorization token required"));
+        return next(ApiError.unauthorized("Authorization token required"));
     }
 
     const token = authHeader.split(" ")[1];
@@ -15,7 +15,7 @@ function requireAuth(req, res, next) {
         req.user = decoded;
         next();
     } catch (err) {
-        return next(ApiError.badRequest("Invalid or expired token"));
+        return next(ApiError.unauthorized("Invalid or expired token"));
     }
 }
 
