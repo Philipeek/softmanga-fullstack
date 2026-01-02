@@ -1,4 +1,6 @@
 const userService = require("../services/userService");
+const ApiError = require("../utils/ApiError");
+const { parseIdParam } = require("../utils/validators");
 
 async function listUsers(req, res, next) {
     try {
@@ -11,12 +13,10 @@ async function listUsers(req, res, next) {
 
 async function getUser(req, res, next) {
     try {
-        const { id } = req.params;
-        const user = await userService.getUserById(id);
+        const id = parseIdParam(req.params.id, "user id");
 
-        if (!user) {
-            return res.status(404).json({ error: "User not found" });
-        }
+        const user = await userService.getUserById(id);
+        if (!user) return next(ApiError.notFound("User not found"));
 
         res.json({ data: user });
     } catch (error) {
